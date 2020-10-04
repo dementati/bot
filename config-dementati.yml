@@ -1,0 +1,486 @@
+bot:
+    prefix:      "!"
+    token:       !ENV "BOT_TOKEN"
+    sentry_dsn:  !ENV "BOT_SENTRY_DSN"
+
+    redis:
+        host:  "redis"
+        port:  6379
+        password: !ENV "REDIS_PASSWORD"
+        use_fakeredis: true
+
+    stats:
+        statsd_host: "graphite"
+        presence_update_timeout: 300
+
+    cooldowns:
+        # Per channel, per tag.
+        tags: 60
+
+    clean:
+        # Maximum number of messages to traverse for clean commands
+        message_limit: 10000
+
+
+style:
+    colours:
+        soft_red: 0xcd6d6d
+        soft_green: 0x68c290
+        soft_orange: 0xf9cb54
+
+    emojis:
+        defcon_disabled: "<:defcondisabled:470326273952972810>"
+        defcon_enabled:  "<:defconenabled:470326274213150730>"
+        defcon_updated:  "<:defconsettingsupdated:470326274082996224>"
+
+        status_online:  "<:status_online:470326272351010816>"
+        status_idle:    "<:status_idle:470326266625785866>"
+        status_dnd:     "<:status_dnd:470326272082313216>"
+        status_offline: "<:status_offline:470326266537705472>"
+
+        badge_staff: "<:discord_staff:743882896498098226>"
+        badge_partner: "<:partner:748666453242413136>"
+        badge_hypesquad: "<:hypesquad_events:743882896892362873>"
+        badge_bug_hunter: "<:bug_hunter_lvl1:743882896372269137>"
+        badge_hypesquad_bravery: "<:hypesquad_bravery:743882896745693335>"
+        badge_hypesquad_brilliance: "<:hypesquad_brilliance:743882896938631248>"
+        badge_hypesquad_balance: "<:hypesquad_balance:743882896460480625>"
+        badge_early_supporter: "<:early_supporter:743882896909140058>"
+        badge_bug_hunter_level_2: "<:bug_hunter_lvl2:743882896611344505>"
+        badge_verified_bot_developer: "<:verified_bot_dev:743882897299210310>"
+
+        incident_actioned:      "<:incident_actioned:719645530128646266>"
+        incident_unactioned:    "<:incident_unactioned:719645583245180960>"
+        incident_investigating: "<:incident_investigating:719645658671480924>"
+
+        failmail: "<:failmail:633660039931887616>"
+        trashcan: "<:trashcan:637136429717389331>"
+
+        bullet:     "\u2022"
+        pencil:     "\u270F"
+        new:        "\U0001F195"
+        cross_mark: "\u274C"
+        check_mark: "\u2705"
+
+        # emotes used for #reddit
+        upvotes:        "<:reddit_upvotes:755845219890757644>"
+        comments:       "<:reddit_comments:755845255001014384>"
+        user:           "<:reddit_users:755845303822974997>"
+
+    icons:
+        crown_blurple: "https://cdn.discordapp.com/emojis/469964153289965568.png"
+        crown_green:   "https://cdn.discordapp.com/emojis/469964154719961088.png"
+        crown_red:     "https://cdn.discordapp.com/emojis/469964154879344640.png"
+
+        defcon_denied:   "https://cdn.discordapp.com/emojis/472475292078964738.png"
+        defcon_disabled: "https://cdn.discordapp.com/emojis/470326273952972810.png"
+        defcon_enabled:  "https://cdn.discordapp.com/emojis/470326274213150730.png"
+        defcon_updated:  "https://cdn.discordapp.com/emojis/472472638342561793.png"
+
+        filtering: "https://cdn.discordapp.com/emojis/472472638594482195.png"
+
+        guild_update: "https://cdn.discordapp.com/emojis/469954765141442561.png"
+
+        hash_blurple: "https://cdn.discordapp.com/emojis/469950142942806017.png"
+        hash_green:   "https://cdn.discordapp.com/emojis/469950144918585344.png"
+        hash_red:     "https://cdn.discordapp.com/emojis/469950145413251072.png"
+
+        message_bulk_delete: "https://cdn.discordapp.com/emojis/469952898994929668.png"
+        message_delete:      "https://cdn.discordapp.com/emojis/472472641320648704.png"
+        message_edit:        "https://cdn.discordapp.com/emojis/472472638976163870.png"
+
+        sign_in:  "https://cdn.discordapp.com/emojis/469952898181234698.png"
+        sign_out: "https://cdn.discordapp.com/emojis/469952898089091082.png"
+
+        token_removed: "https://cdn.discordapp.com/emojis/470326273298792469.png"
+
+        user_ban:    "https://cdn.discordapp.com/emojis/469952898026045441.png"
+        user_unban:  "https://cdn.discordapp.com/emojis/469952898692808704.png"
+        user_update: "https://cdn.discordapp.com/emojis/469952898684551168.png"
+
+        user_mute:     "https://cdn.discordapp.com/emojis/472472640100106250.png"
+        user_unmute:   "https://cdn.discordapp.com/emojis/472472639206719508.png"
+        user_verified: "https://cdn.discordapp.com/emojis/470326274519334936.png"
+
+        user_warn: "https://cdn.discordapp.com/emojis/470326274238447633.png"
+
+        pencil: "https://cdn.discordapp.com/emojis/470326272401211415.png"
+
+        remind_blurple: "https://cdn.discordapp.com/emojis/477907609215827968.png"
+        remind_green:   "https://cdn.discordapp.com/emojis/477907607785570310.png"
+        remind_red:     "https://cdn.discordapp.com/emojis/477907608057937930.png"
+
+        questionmark: "https://cdn.discordapp.com/emojis/512367613339369475.png"
+
+        superstarify: "https://cdn.discordapp.com/emojis/636288153044516874.png"
+        unsuperstarify: "https://cdn.discordapp.com/emojis/636288201258172446.png"
+
+        voice_state_blue: "https://cdn.discordapp.com/emojis/656899769662439456.png"
+        voice_state_green: "https://cdn.discordapp.com/emojis/656899770094452754.png"
+        voice_state_red: "https://cdn.discordapp.com/emojis/656899769905709076.png"
+
+guild:
+    id: 185826414182924288
+    invite: "https://discord.gg/python"
+
+    categories:
+        help_available:                     762090805976104991
+        help_in_use:                        762093473603911750
+        help_dormant:                       762095679635193907
+        modmail:                            714494672835444826
+
+    channels:
+        # Public announcement and news channels
+        change_log:                 &CHANGE_LOG         762377840678142042
+        announcements:              &ANNOUNCEMENTS      762377537744535592
+        python_news:                &PYNEWS_CHANNEL     762091310244823041
+        python_events:              &PYEVENTS_CHANNEL   762418616871682119
+        mailing_lists:              &MAILING_LISTS      762416392963358721
+        reddit:                     &REDDIT_CHANNEL     762418700002787448
+        user_event_announcements:   &USER_EVENT_A       762418874380714034
+
+        # Development
+        dev_contrib:        &DEV_CONTRIB    762378248122007552
+        dev_core:           &DEV_CORE       762378347148738610
+        dev_log:            &DEV_LOG        762382639683600412
+
+        # Discussion
+        meta:               762417147443806279
+        python_discussion:  762096680098988072
+
+        # Python Help: Available
+        how_to_get_help:    762383596962054175
+        cooldown:           762378124611551253
+
+        # Logs
+        attachment_log:     &ATTACH_LOG     762377676463538246
+        message_log:        &MESSAGE_LOG    762417036423856169
+        mod_log:            &MOD_LOG        762092759985029122
+        user_log:                           762418960385048586
+        voice_log:                          762419295031918623
+        dm_log:                             762091423184060517
+
+        # Off-topic
+        off_topic_0:    762418309487525938
+        off_topic_1:    762418388017479691
+        off_topic_2:    762418450387566602
+
+        # Special
+        bot_commands:       &BOT_CMD        762097267351224330
+        esoteric:                           762382757971755008
+        verification:                       762419036121464852
+
+        # Staff
+        admins:             &ADMINS         762377454715011163
+        admin_spam:         &ADMIN_SPAM     762377324930138152
+        defcon:             &DEFCON         762090991502360587
+        helpers:            &HELPERS        762382933066776586
+        incidents:                          762416088583241778
+        incidents_archive:                  762416294464716820
+        mods:               &MODS           762383045906006046
+        mod_alerts:         &MOD_ALERTS     762417255824621578
+        mod_spam:           &MOD_SPAM       762418232153735190
+        organisation:       &ORGANISATION   762418524182151189
+        staff_lounge:       &STAFF_LOUNGE   464905259261755392
+        duck_pond:          &DUCK_POND      762091642794541097
+
+        # Staff announcement channels
+        staff_announcements:    &STAFF_ANNOUNCEMENTS    762418777701875742
+        mod_announcements:      &MOD_ANNOUNCEMENTS      762417727972573215
+        admin_announcements:    &ADMIN_ANNOUNCEMENTS    762375086639808543
+
+        # Voice
+        code_help_voice:                    762378001500864554
+        admins_voice:       &ADMINS_VOICE   500734494840717332
+        staff_voice:        &STAFF_VOICE    412375055910043655
+
+        # Watch
+        big_brother_logs:   &BB_LOGS        762091870586667048
+        talent_pool:        &TALENT_POOL    762090359211425803
+
+    moderation_channels:
+        - *ADMINS
+        - *ADMIN_SPAM
+        - *MOD_ALERTS
+        - *MODS
+        - *MOD_SPAM
+
+    # Modlog cog ignores events which occur in these channels
+    modlog_blacklist:
+        - *ADMINS
+        - *ADMINS_VOICE
+        - *ATTACH_LOG
+        - *MESSAGE_LOG
+        - *MOD_LOG
+        - *STAFF_VOICE
+
+    reminder_whitelist:
+        - *BOT_CMD
+        - *DEV_CONTRIB
+
+    roles:
+        announcements:                          463658397560995840
+        contributors:                           295488872404484098
+        help_cooldown:                          699189276025421825
+        muted:              &MUTED_ROLE         277914926603829249
+        partners:                               323426753857191936
+        python_community:   &PY_COMMUNITY_ROLE  458226413825294336
+
+        unverified:                             739794855945044069
+        verified:                               352427296948486144  # @Developers on PyDis
+
+        # Staff
+        admins:             &ADMINS_ROLE    267628507062992896
+        core_developers:                    587606783669829632
+        helpers:            &HELPERS_ROLE   762382933066776586
+        moderators:         &MODS_ROLE      267629731250176001
+        owners:             &OWNERS_ROLE    267627879762755584
+
+        # Code Jam
+        jammers:        737249140966162473
+        team_leaders:   737250302834638889
+
+    moderation_roles:
+        - *OWNERS_ROLE
+        - *ADMINS_ROLE
+        - *MODS_ROLE
+
+    staff_roles:
+        - *OWNERS_ROLE
+        - *ADMINS_ROLE
+        - *MODS_ROLE
+        - *HELPERS_ROLE
+
+    webhooks:
+        big_brother:                        762094917463310357
+        dev_log:                            680501655111729222
+        dm_log:                             762093660455829524
+        duck_pond:                          762093081130303489
+        incidents_archive:                  720671599790915702
+        python_news:        &PYNEWS_WEBHOOK 762094421524480021
+        reddit:                             635408384794951680
+        talent_pool:                        762092246312419339
+
+filter:
+    # What do we filter?
+    filter_zalgo:          false
+    filter_invites:        true
+    filter_domains:        true
+    filter_everyone_ping:  true
+    watch_regex:           true
+    watch_rich_embeds:     true
+
+    # Notify user on filter?
+    # Notifications are not expected for "watchlist" type filters
+    notify_user_zalgo:          false
+    notify_user_invites:        true
+    notify_user_domains:        false
+    notify_user_everyone_ping:  true
+
+    # Filter configuration
+    ping_everyone:             true
+    offensive_msg_delete_days: 7     # How many days before deleting an offensive message?
+
+    # Censor doesn't apply to these
+    channel_whitelist:
+        - *ADMINS
+        - *MOD_LOG
+        - *MESSAGE_LOG
+        - *DEV_LOG
+        - *BB_LOGS
+        - *STAFF_LOUNGE
+        - *TALENT_POOL
+        - *USER_EVENT_A
+
+    role_whitelist:
+        - *ADMINS_ROLE
+        - *MODS_ROLE
+        - *OWNERS_ROLE
+        - *HELPERS_ROLE
+        - *PY_COMMUNITY_ROLE
+
+
+keys:
+    site_api:    !ENV "BOT_API_KEY"
+
+
+urls:
+    # PyDis site vars
+    site:        &DOMAIN       "web:8000"
+    site_api:    &API    !JOIN ["api.", *DOMAIN]
+    site_paste:  &PASTE  !JOIN ["paste.", *DOMAIN]
+    site_staff:  &STAFF  !JOIN ["staff.", *DOMAIN]
+    site_schema: &SCHEMA       "http://"
+
+    site_logs_view:                     !JOIN [*SCHEMA, *STAFF, "/bot/logs"]
+    paste_service:                      !JOIN [*SCHEMA, *PASTE, "/{key}"]
+
+    # Snekbox
+    snekbox_eval_api: "http://snekbox:8060/eval"
+
+    # Discord API URLs
+    discord_api:        &DISCORD_API "https://discordapp.com/api/v7/"
+    discord_invite_api: !JOIN [*DISCORD_API, "invites"]
+
+    # Misc URLs
+    bot_avatar:      "https://raw.githubusercontent.com/discord-python/branding/master/logos/logo_circle/logo_circle.png"
+    github_bot_repo: "https://github.com/python-discord/bot"
+
+anti_spam:
+    # Clean messages that violate a rule.
+    clean_offending: true
+    ping_everyone: true
+
+    punishment:
+        role_id: *MUTED_ROLE
+        remove_after: 600
+
+    rules:
+        attachments:
+            interval: 10
+            max: 9
+
+        burst:
+            interval: 10
+            max: 7
+
+        # Burst shared it (temporarily) disabled to prevent
+        # the bug that triggers multiple infractions/DMs per
+        # user. It also tends to catch a lot of innocent users
+        # now that we're so big.
+        # burst_shared:
+        #    interval: 10
+        #    max: 20
+
+        chars:
+            interval: 5
+            max: 3_000
+
+        duplicates:
+            interval: 10
+            max: 3
+
+        discord_emojis:
+            interval: 10
+            max: 20
+
+        links:
+            interval: 10
+            max: 10
+
+        mentions:
+            interval: 10
+            max: 5
+
+        newlines:
+            interval: 10
+            max: 100
+            max_consecutive: 10
+
+        role_mentions:
+            interval: 10
+            max: 3
+
+
+reddit:
+    subreddits:
+        - 'r/Python'
+    client_id: !ENV "REDDIT_CLIENT_ID"
+    secret:    !ENV "REDDIT_SECRET"
+
+
+big_brother:
+    log_delay: 15
+    header_message_limit: 15
+
+
+free:
+    # Seconds to elapse for a channel
+    # to be considered inactive.
+    activity_timeout: 600
+    cooldown_rate: 1
+    cooldown_per: 60.0
+
+
+help_channels:
+    enable: true
+
+    # Minimum interval before allowing a certain user to claim a new help channel
+    claim_minutes: 15
+
+    # Roles which are allowed to use the command which makes channels dormant
+    cmd_whitelist:
+        - *HELPERS_ROLE
+
+    # Allowed duration of inactivity before making a channel dormant
+    idle_minutes: 30
+
+    # Allowed duration of inactivity when channel is empty (due to deleted messages)
+    # before message making a channel dormant
+    deleted_idle_minutes: 5
+
+    # Maximum number of channels to put in the available category
+    max_available: 2
+
+    # Maximum number of channels across all 3 categories
+    # Note Discord has a hard limit of 50 channels per category, so this shouldn't be > 50
+    max_total_channels: 32
+
+    # Prefix for help channel names
+    name_prefix: 'help-'
+
+    # Notify if more available channels are needed but there are no more dormant ones
+    notify: true
+
+    # Channel in which to send notifications
+    notify_channel: *HELPERS
+
+    # Minimum interval between helper notifications
+    notify_minutes: 15
+
+    # Mention these roles in notifications
+    notify_roles:
+        - *HELPERS_ROLE
+
+redirect_output:
+    delete_invocation: true
+    delete_delay: 15
+
+duck_pond:
+    threshold: 4
+    channel_blacklist:
+        - *ANNOUNCEMENTS
+        - *PYNEWS_CHANNEL
+        - *PYEVENTS_CHANNEL
+        - *MAILING_LISTS
+        - *REDDIT_CHANNEL
+        - *USER_EVENT_A
+        - *DUCK_POND
+        - *CHANGE_LOG
+        - *STAFF_ANNOUNCEMENTS
+        - *MOD_ANNOUNCEMENTS
+        - *ADMIN_ANNOUNCEMENTS
+
+python_news:
+    mail_lists:
+        - 'python-ideas'
+        - 'python-announce-list'
+        - 'pypi-announce'
+    channel: *PYNEWS_CHANNEL
+    webhook: *PYNEWS_WEBHOOK
+
+
+verification:
+    unverified_after: 3  # Days after which non-Developers receive the @Unverified role
+    kicked_after: 30  # Days after which non-Developers get kicked from the guild
+    reminder_frequency: 28  # Hours between @Unverified pings
+    bot_message_delete_delay: 10  # Seconds before deleting bots response in #verification
+
+    # Number in range [0, 1] determining the percentage of unverified users that are safe
+    # to be kicked from the guild in one batch, any larger amount will require staff confirmation,
+    # set this to 0 to require explicit approval for batches of any size
+    kick_confirmation_threshold: 0.01  # 1%
+
+
+config:
+    required_keys: ['bot.token']
